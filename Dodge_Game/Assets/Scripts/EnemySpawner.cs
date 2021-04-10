@@ -8,7 +8,8 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyGroup;
     private bool isPlaying = true;
 
-    public void OffSpawner() {
+    public void OffSpawner()
+    {
         isPlaying = false;
     }
 
@@ -29,18 +30,22 @@ public class EnemySpawner : MonoBehaviour
                 Enemy e = Instantiate(enemy);
 
                 float posY = Random.Range(-8f, 8f);
-                int isLeftInstantiate = Random.Range(0, 2);
+                int isLeftInstatiate = Random.Range(0, 2);
 
-                if (isLeftInstantiate == 0)
+                if (isLeftInstatiate == 0)
                 {
-                    e.transform.position = new Vector3(-8.7f, posY, -1);
-                    e.transform.rotation = new Quaternion(0, 0, 0, 0);
+                    e.transform.position =
+                        new Vector3(-8.7f, posY, -1);
+                    e.transform.rotation =
+                        new Quaternion(0, 0, 0, 0);
                     e.SetDirectionVector(1);
                 }
                 else
                 {
-                    e.transform.position = new Vector3(8.7f, posY, -1);
-                    e.transform.rotation = new Quaternion(0, 0, 180, 0);
+                    e.transform.position =
+                        new Vector3(8.7f, posY, -1);
+                    e.transform.rotation =
+                        new Quaternion(0, 0, 180, 0);
                     e.SetDirectionVector(-1);
                 }
                 e.transform.parent = enemyGroup.transform;

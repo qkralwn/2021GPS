@@ -7,7 +7,8 @@ public class Enemy : MonoBehaviour
     private int directionVector = 1;
     private int speed = 7;
 
-    public void SetDirectionVector(int directionVector)
+    public void SetDirectionVector
+        (int directionVector)
     {
         this.directionVector = directionVector;
     }
@@ -33,10 +34,11 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag.Equals("Player"))
         {
             //Destroy(gameObject);
             gameObject.SetActive(false);
+            //본인의 선택
         }
     }
 }
